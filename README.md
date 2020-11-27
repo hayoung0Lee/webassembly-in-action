@@ -29,8 +29,22 @@ echo 'export PATH="$PATH:/Users/hayoung/Desktop/Github Repos/webassembly-in-acti
 echo 'export PATH="$PATH:(your source ./emsdk_env.sh result)"' >> ~/.bash_profile
 
 export PATH="$PATH:/Users/hayoung/Desktop/Github Repos/webassembly-in-action/emsdk" // open .bash_profile
-```
 
+
+
+export PATH="$PATH:/Users/hayoung/Desktop/Github Repos/webassembly-in-action/emsdk/upstream/emscripten:/Users/hayoung/Desktop/Github Repos/webassembly-in-action/emsdk/node/12.18.1_64bit/bin:/Users/hayoung/Desktop/Github Repos/webassembly-in-action/emsdk/python/3.7.4-2_64bit/bin:/Users/hayoung/Desktop/Github Repos/webassembly-in-action/emsdk"
+
+export EM_CACHE="/Users/hayoung/Desktop/Github Repos/webassembly-in-action/emsdk/upstream/emscripten/cache"
+
+export EMSDK_NODE="/Users/hayoung/Desktop/Github Repos/webassembly-in-action/emsdk/node/12.18.1_64bit/bin/node"
+
+export EMSDK_PYTHON="/Users/hayoung/Desktop/Github Repos/webassembly-in-action/emsdk/python/3.7.4-2_64bit/bin/python3"
+
+export SSL_CERT_FILE="/Users/hayoung/Desktop/Github Repos/webassembly-in-action/emsdk/python/3.7.4-2_64bit/lib/python3.7/site-packages/certifi/cacert.pem"
+
+
+```
+엠스크립튼 버전이 다르긴한데, 일단 쓰자. 이게 잘되야 #include <emscripten.h> 쓸수있다. 
 
 4. Emiscripton and Node
 나는 내 컴퓨터에 nvm 으로 node를 관리하고 있었는데, emiscripton 이 node를 또 가져오네.
@@ -50,5 +64,24 @@ emscripton은 12
 https://github.com/WebAssembly/wabt#:~:text=WABT%20(we%20pronounce%20it%20%22wabbit,of%20tools%20for%20WebAssembly%2C%20including%3A&text=wasm%2Dinterp%3A%20decode%20and%20run,wat%2Ddesugar%3A%20parse%20.
 
 이건 뭔가 사용하는건가본데, 아직 잘 모르겠다!
+
+
+## 3장 웹어셈블리 모듈 만들어보기
+
+- 엠스크립튼은 c/c++ 코드를 웹어셈블리 바이트코드로 컴파일하는 가장 검증된 툴킨!!. 원래는 저 코드를 asm.js로 바꿀려고 만들어진건데, 이제 웹어셈블리로도 컴파일된다!
+
+- 엠스크립튼 모듈을 생성하는 세가지 방법: 
+  - 엠스크립튼으로 웹어셈블리 모듈, 자바스크립트 연결 파일, html 템플릿 파일을 모두 생성
+  - 엠스크립튼으로 웹어셈블리 모듈과 자바스크립트 연결파일 생성
+  - 엠스크립튼으로 웹어셈블리 모듈 생성 
+
+- 소수를 찾아 출력하는 프로그램 만들기
+  1. c/c++ 코드로 소수를 찾아 출력하는 프로그램 만들기
+  2. 엠스크립튼으로 웹어셈블리, html, 자바스크립트 파일을 생성
+  3. 브라우저에서 html파일을 열어 실행 결과를 확인
+  (맥에서 c++: https://csdiary.tistory.com/2)
+
+- 3장 공부한 코드: https://github.com/hayoung0Lee/wasm-chapter-3
+
 
 
